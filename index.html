@@ -11,40 +11,73 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            color: #1a202c;
-            background-color: #f7fafc;
+            color: #e2e8f0;
+            background-color: #0d1117; /* A deeper, more dramatic background */
+            transition: background-color 0.5s ease;
+        }
+        .main-card {
+            background-color: #161b22;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .main-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+            transform: translateY(-8px);
+        }
+        .section-box {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 0.75rem;
+            background-size: 200% 200%;
+            animation: gradient-shift 5s ease-in-out infinite;
+        }
+        .section-box:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .social-icon {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-icon:hover {
+            color: #fff;
+            transform: scale(1.2);
+        }
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+<body class="bg-gray-900 flex items-center justify-center min-h-screen p-4">
 
-    <div class="bg-white rounded-xl shadow-lg p-8 sm:p-12 max-w-2xl w-full text-center">
+    <div class="main-card rounded-3xl p-8 sm:p-12 max-w-2xl w-full text-center">
         <!-- Profile Section -->
         <div class="mb-8">
-            <img src="https://placehold.co/128x128/90cdf4/4a5568?text=AV" alt="Profile Picture" class="rounded-full mx-auto shadow-md mb-4">
-            <h1 class="text-3xl sm:text-4xl font-bold mb-2 text-gray-800">Alex P. Varghese</h1>
-            <p class="text-gray-600 text-lg">Computer Science Student</p>
+            <img src="https://placehold.co/128x128/90cdf4/4a5568?text=AV" alt="Profile Picture" class="rounded-full mx-auto shadow-xl mb-4">
+            <h1 class="text-3xl sm:text-4xl font-bold mb-2 text-white">Alex P. Varghese</h1>
+            <p class="text-gray-400 text-lg">Computer Science Student</p>
         </div>
 
         <!-- Details Section -->
         <div class="space-y-6">
-            <div class="p-6 bg-blue-50 rounded-lg">
-                <h2 class="text-2xl font-semibold mb-2 text-blue-800">About Me</h2>
-                <p class="text-gray-700 leading-relaxed">
+            <div class="p-6 text-white rounded-lg section-box bg-gradient-to-r from-rose-500 to-purple-600">
+                <h2 class="text-2xl font-semibold mb-2">About Me</h2>
+                <p class="leading-relaxed">
                     I'm from **Kunnamkulam, Kerala**, and currently pursuing a **B.Tech in Computer Science** at **Vidya Academy of Science and Technology**.
                 </p>
             </div>
             
-            <div class="p-6 bg-green-50 rounded-lg">
-                <h2 class="text-2xl font-semibold mb-2 text-green-800">My Location</h2>
-                <p class="text-gray-700 leading-relaxed">
+            <div class="p-6 text-white rounded-lg section-box bg-gradient-to-r from-sky-500 to-cyan-500">
+                <h2 class="text-2xl font-semibold mb-2">My Location</h2>
+                <p class="leading-relaxed">
                     Kunnamkulam, Kerala
                 </p>
             </div>
 
-            <div class="p-6 bg-purple-50 rounded-lg">
-                <h2 class="text-2xl font-semibold mb-2 text-purple-800">Education</h2>
-                <p class="text-gray-700 leading-relaxed">
+            <div class="p-6 text-white rounded-lg section-box bg-gradient-to-r from-emerald-500 to-teal-500">
+                <h2 class="text-2xl font-semibold mb-2">Education</h2>
+                <p class="leading-relaxed">
                     B.Tech in Computer Science at Vidya Academy of Science and Technology.
                 </p>
             </div>
@@ -52,16 +85,16 @@
 
         <!-- Social Links (Placeholder) -->
         <div class="mt-8">
-            <h2 class="text-xl font-semibold mb-4 text-gray-700">Connect with Me</h2>
-            <div class="flex justify-center space-x-4">
-                <a href="#" class="text-gray-500 hover:text-gray-900 transition duration-300">
+            <h2 class="text-xl font-semibold mb-4 text-gray-300">Connect with Me</h2>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 social-icon hover:text-white transition-colors duration-300">
                     <!-- Placeholder for social media icon -->
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 16c-3.313 0-6-2.687-6-6s2.687-6 6-6 6 2.687 6 6-2.687 6-6 6z"/>
                     </svg>
                 </a>
-                <a href="#" class="text-gray-500 hover:text-gray-900 transition duration-300">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <a href="#" class="text-gray-400 social-icon hover:text-white transition-colors duration-300">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 16c-3.313 0-6-2.687-6-6s2.687-6 6-6 6 2.687 6 6-2.687 6-6 6z"/>
                     </svg>
                 </a>
